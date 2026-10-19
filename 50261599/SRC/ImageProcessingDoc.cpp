@@ -165,14 +165,10 @@ void CImageProcessingDoc::CalculateHistogram()
 
 void CImageProcessingDoc::OnProcessBrightness()
 {
-	// TODO: Add a changing the brightness histogram code here
 	if (m_pImage) {
 		DlgBrightnessOption dlg;
 
 		if (dlg.DoModal() == IDOK) {
-			// write your own code
-			// for applying your effect, you must use m_pImage
-			// this code is a simple example for manufacturing image : grayscaling
 
 			int nPlusMinus = dlg.m_nPlusMinus;
 			BYTE byModifyValue = dlg.m_byModifyValue;
@@ -184,25 +180,20 @@ void CImageProcessingDoc::OnProcessBrightness()
 
 			for (DWORD y = 0; y < height; y++) {
 				for (DWORD x = 0; x < width; x++) {
-					color = m_pImage->GetPixelColor(x, y);
+					RGBQUAD color = m_pImage->GetPixelColor(x, y);
+					RGBQUAD newcolor;
 
-					newcolor.rgbBlue  = (BYTE)RGB2GRAY(color.rgbRed, color.rgbGreen, color.rgbBlue);
-					newcolor.rgbGreen = (BYTE)RGB2GRAY(color.rgbRed, color.rgbGreen, color.rgbBlue);
-					newcolor.rgbRed   = (BYTE)RGB2GRAY(color.rgbRed, color.rgbGreen, color.rgbBlue);
+					int r = color.rgbRed + nPlusMinus * byModifyValue;
+					int g = color.rgbGreen + nPlusMinus * byModifyValue;
+					int b = color.rgbBlue + nPlusMinus * byModifyValue;
+
+					newcolor.rgbRed = (BYTE)max(0, min(255, r));
+					newcolor.rgbGreen = (BYTE)max(0, min(255, g));
+					newcolor.rgbBlue = (BYTE)max(0, min(255, b));
 
 					m_pImage->SetPixelColor(x, y, newcolor);
 				}
 			}
-
-			// code to view overflow, Keep observation with the debugger
-			BYTE a = 255;
-			BYTE b = 1;
-			int  c = 10;
-			BYTE r;
-
-			r = a + b;
-			r = a + c;
-			r = b + c;
 		}
 	}
 

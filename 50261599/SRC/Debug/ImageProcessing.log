@@ -1,74 +1,56 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  stdafx.cpp
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\cximage\cximage\xiofile.h(25,10): warning C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'stdafx.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\cximage\cximage\xiofile.h(117,10): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'stdafx.cpp')
-  
-cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  xTargetButton.cpp
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\xTargetButton.cpp(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\xTargetButton.cpp(799,3): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file '/xTargetButton.cpp')
-  
-  MainFrm.cpp
-  ImageProcessingView.cpp
   ImageProcessingDoc.cpp
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(303,12): warning C4101: 'newcolor': unreferenced local variable
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(302,12): warning C4101: 'color': unreferenced local variable
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(327,9): warning C4101: 'LUT': unreferenced local variable
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(376,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(377,9): warning C4101: 'sum_hist': unreferenced local variable
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(387,8): warning C4101: 'LUT': unreferenced local variable
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(431,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(488,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(432,9): warning C4101: 'sum_hist': unreferenced local variable
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(442,8): warning C4101: 'LUT': unreferenced local variable
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(458,9): warning C4101: 'desired_histogram': unreferenced local variable
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(501,7): warning C4101: 'min': unreferenced local variable
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(502,9): warning C4101: 'inv_hist': unreferenced local variable
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(500,9): warning C4101: 'difference': unreferenced local variable
-  (compiling source file '/ImageProcessingDoc.cpp')
-  
   ImageProcessing.cpp
-  DlgMosaicOption.cpp
-  DlgIntensityTransformOption.cpp
-  DlgHisto.cpp
-  DlgContrastStretchOption.cpp
-  DlgCompositeOption.cpp
-  DlgBrightnessOption.cpp
-  ChildFrm.cpp
   Generating Code...
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(352,1): warning C4700: uninitialized local variable 'newcolor' used
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(406,1): warning C4700: uninitialized local variable 'newcolor' used
-C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(534,1): warning C4700: uninitialized local variable 'newcolor' used
-ChildFrm.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-     Creating library C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\Debug\ImageProcessing.lib and object C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\Debug\ImageProcessing.exp
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(179,12): warning C4101: 'newcolor': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(178,12): warning C4101: 'color': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(294,12): warning C4101: 'newcolor': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(293,12): warning C4101: 'color': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(318,9): warning C4101: 'LUT': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(367,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(368,9): warning C4101: 'sum_hist': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(378,8): warning C4101: 'LUT': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(422,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(479,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(423,9): warning C4101: 'sum_hist': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(433,8): warning C4101: 'LUT': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(449,9): warning C4101: 'desired_histogram': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(492,7): warning C4101: 'min': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(493,9): warning C4101: 'inv_hist': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(491,9): warning C4101: 'difference': unreferenced local variable
+  (compiling source file '/ImageProcessingDoc.cpp')
+  
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(397,1): warning C4700: uninitialized local variable 'newcolor' used
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(343,1): warning C4700: uninitialized local variable 'newcolor' used
+C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\ImageProcessingDoc.cpp(525,1): warning C4700: uninitialized local variable 'newcolor' used
   ImageProcessing.vcxproj -> C:\Users\CAU\source\repos\juliebttran\14871-01-image-processing\50261599\SRC\Debug\ImageProcessing.exe
