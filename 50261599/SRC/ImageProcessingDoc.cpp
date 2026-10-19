@@ -262,28 +262,60 @@ void CImageProcessingDoc::OnProcessMosaic()
 
 void CImageProcessingDoc::OnProcessComposite()
 {
-	// TODO: Add a composite code here
 	if (m_pImage) {
 		DlgCompositeOption dlg;
 
 		if (dlg.DoModal() == IDOK) {
 			int nOperatorID = dlg.GetCompositeOperatorID();
-			CxImage * pSecondImage = dlg.GetSecondImage();
+			CxImage* pSecondImage = dlg.GetSecondImage();
 
 			DWORD width = m_pImage->GetWidth();
 			DWORD height = m_pImage->GetHeight();
+
 			RGBQUAD firstColor;
 			RGBQUAD secondColor;
 			RGBQUAD newColor;
 
 			for (DWORD y = 0; y < height; y++) {
 				for (DWORD x = 0; x < width; x++) {
+
 					firstColor = m_pImage->GetPixelColor(x, y);
 					secondColor = pSecondImage->GetPixelColor(x, y);
 
-					newColor.rgbBlue  = (BYTE)RGB2GRAY(secondColor.rgbRed, secondColor.rgbGreen, secondColor.rgbBlue);
-					newColor.rgbGreen = (BYTE)RGB2GRAY(secondColor.rgbRed, secondColor.rgbGreen, secondColor.rgbBlue);
-					newColor.rgbRed   = (BYTE)RGB2GRAY(secondColor.rgbRed, secondColor.rgbGreen, secondColor.rgbBlue);
+					if (nOperatorID == 0)
+					{
+						newColor.rgbRed =
+							(BYTE)min(255,
+								(int)firstColor.rgbRed +
+								(int)secondColor.rgbRed);
+
+						newColor.rgbGreen =
+							(BYTE)min(255,
+								(int)firstColor.rgbGreen +
+								(int)secondColor.rgbGreen);
+
+						newColor.rgbBlue =
+							(BYTE)min(255,
+								(int)firstColor.rgbBlue +
+								(int)secondColor.rgbBlue);
+					}
+					else if (nOperatorID == 1)
+					{
+						newColor.rgbRed =
+							(BYTE)max(0,
+								(int)firstColor.rgbRed -
+								(int)secondColor.rgbRed);
+
+						newColor.rgbGreen =
+							(BYTE)max(0,
+								(int)firstColor.rgbGreen -
+								(int)secondColor.rgbGreen);
+
+						newColor.rgbBlue =
+							(BYTE)max(0,
+								(int)firstColor.rgbBlue -
+								(int)secondColor.rgbBlue);
+					}
 
 					m_pImage->SetPixelColor(x, y, newColor);
 				}
