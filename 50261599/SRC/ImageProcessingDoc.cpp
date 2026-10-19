@@ -203,31 +203,54 @@ void CImageProcessingDoc::OnProcessBrightness()
 
 void CImageProcessingDoc::OnProcessMosaic()
 {
-	// TODO: Add a mosaic code here
-	if (m_pImage) {
+	if (m_pImage)
+	{
 		DlgMosaicOption dlg;
 
-		if (dlg.DoModal() == IDOK) {
-			// write your own code
-			// for applying your effect, you must use m_pImage
-			// this code is a simple example for manufacturing image : grayscaling
-
+		if (dlg.DoModal() == IDOK)
+		{
 			DWORD dwWindowSize = dlg.m_dwWindowSize;
 
 			DWORD width = m_pImage->GetWidth();
 			DWORD height = m_pImage->GetHeight();
+
 			RGBQUAD color;
 			RGBQUAD newcolor;
 
-			for (DWORD y = 0; y < height; y++) {
-				for (DWORD x = 0; x < width; x++) {
-					color = m_pImage->GetPixelColor(x, y);
+			for (DWORD y = 0; y < height; y += dwWindowSize)
+			{
+				for (DWORD x = 0; x < width; x += dwWindowSize)
+				{
+					DWORD sumR = 0;
+					DWORD sumG = 0;
+					DWORD sumB = 0;
+					DWORD count = 0;
 
-					newcolor.rgbBlue  = (BYTE)RGB2GRAY(color.rgbRed, color.rgbGreen, color.rgbBlue);
-					newcolor.rgbGreen = (BYTE)RGB2GRAY(color.rgbRed, color.rgbGreen, color.rgbBlue);
-					newcolor.rgbRed   = (BYTE)RGB2GRAY(color.rgbRed, color.rgbGreen, color.rgbBlue);
+					for (DWORD wy = y; wy < y + dwWindowSize && wy < height; wy++)
+					{
+						for (DWORD wx = x; wx < x + dwWindowSize && wx < width; wx++)
+						{
+							color = m_pImage->GetPixelColor(wx, wy);
 
-					m_pImage->SetPixelColor(x, y, newcolor);
+							sumR += color.rgbRed;
+							sumG += color.rgbGreen;
+							sumB += color.rgbBlue;
+
+							count++;
+						}
+					}
+
+					newcolor.rgbRed = (BYTE)(sumR / count);
+					newcolor.rgbGreen = (BYTE)(sumG / count);
+					newcolor.rgbBlue = (BYTE)(sumB / count);
+
+					for (DWORD wy = y; wy < y + dwWindowSize && wy < height; wy++)
+					{
+						for (DWORD wx = x; wx < x + dwWindowSize && wx < width; wx++)
+						{
+							m_pImage->SetPixelColor(wx, wy, newcolor);
+						}
+					}
 				}
 			}
 		}
