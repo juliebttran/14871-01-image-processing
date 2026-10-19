@@ -200,7 +200,7 @@ void CImageProcessingDoc::OnProcessBrightness()
 	CalculateHistogram();
 	UpdateAllViews(NULL);
 }
-
+/*
 void CImageProcessingDoc::OnProcessMosaic()
 {
 	if (m_pImage)
@@ -256,6 +256,83 @@ void CImageProcessingDoc::OnProcessMosaic()
 		}
 	}
 
+	CalculateHistogram();
+	UpdateAllViews(NULL);
+}
+*/
+
+void CImageProcessingDoc::OnProcessMosaic()
+{
+	if (m_pImage)
+	{
+		DlgMosaicOption dlg;
+
+		if(dlg.DoModal() == IDOK) 
+		{
+			DWORD mode = dlg.m_dwWindowSize;
+
+			DWORD width = m_pImage->GetWidth();
+			DWORD height = m_pImage->GetHeight();
+
+			float blurMask[3][3] =
+				{	{ 1.0f / 9, 1.0f / 9, 1.0f / 9 },
+					{ 1.0f / 9, 1.0f / 9, 1.0f / 9 },
+					{ 1.0f / 9, 1.0f / 9, 1.0f / 9 } 
+				};
+
+			float sharpenMask[3][3] =
+				{	{ 0,-1,0 },
+					{ -1, 5, -1 },
+					{ 0, -1, 0 }
+			};
+
+			float (*mask)[3];
+
+			if (mode == 0) {
+				mask = blurMask;
+			}
+			else {
+				mask = sharpenMask;
+			}
+
+			CxImage* buffer = new CxImage;
+			buffer->Create(width, height, 24, CXIMAGE_FORMAT_BMP);	
+
+			RGBQUAD color;
+			RGBQUAD newcolor;
+
+			for (DWORD y = 1; y < height - 1; y++) 
+			{
+				for (DWORD x =1; x < width - 1; x++) 
+				{
+					float sumR = 0;
+					float sumG = 0;
+					float sumB = 0;
+
+					for (int j = -1; j <= 1; j++) 
+					{
+						for (int i = -1; i <= 1; i++) 
+						{
+							color = m_pImage->GetPixelColor(x + i, y + j);
+							sumR += color.rgbRed * mask[j + 1][i + 1];
+							sumG += color.rgbGreen * mask[j + 1][i + 1];
+							sumB += color.rgbBlue * mask[j + 1][i + 1];
+						}
+					}
+					newcolor.rgbRed = 
+						(BYTE)max(0, min(255, (int)sumR));
+					newcolor.rgbGreen = 
+						(BYTE)max(0, min(255, (int)sumG));
+					newcolor.rgbBlue = 
+						(BYTE)max(0, min(255, (int)sumB));
+
+					buffer->SetPixelColor(x, y, newcolor);
+				}
+			}
+			delete m_pImage;
+			m_pImage = buffer;
+		}
+	}
 	CalculateHistogram();
 	UpdateAllViews(NULL);
 }
